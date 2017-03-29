@@ -8,7 +8,7 @@ public class DFA
 	private StateTable stateTable;
 	private StateIterator iter;
 	private ArrayList<State> states = new ArrayList<State>();
-		
+
 
 	public DFA()
 	{
@@ -31,16 +31,18 @@ public class DFA
 		return this.stateTable;
 	}
 
-	public State getFinalState()
+	public ArrayList<State> getFinalState()
 	{
+		ArrayList<State> tmp = new ArrayList<State>();
+
 		if(states == null)
 			return null;
 
 		for(State state : states)
 			if(state.isFinalState())
-				return state;
+				tmp.add(state);
 
-		return null;
+		return tmp;
 	}
 
 	public State getStartState()
@@ -58,5 +60,35 @@ public class DFA
 	public ArrayList<State> getAllStates()
 	{
 		return this.states;
+	}
+
+	public boolean isAccept(String str)
+	{
+		if(str.equals("e"))
+		{
+			return getStartState().isFinalState();
+		}
+	
+		iter = getStartState();
+
+		try
+		{
+			for(int i=0; i<str.length(); i++)
+				toNextState(str.charAt(i));
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+
+		if(iter == null)
+			return false;
+
+		return iter.isFinalState();
+	}
+
+	public void toNextState(char token) throws Exception
+	{
+		iter = iter.toNextState(token);
 	}
 }

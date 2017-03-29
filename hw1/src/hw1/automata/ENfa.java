@@ -26,13 +26,23 @@ public class ENfa
 		this.stateTable = stateTable;
 	}
 
-	public static ENfa makeENfa(final String re) throws Exception
+	public static ENfa makeENfa(final String re)
 	{
 		ENfa enfa = new ENfa();
 
 		if(!(re.indexOf('[') >= 0 && re.indexOf(']') > 0))	//not a case
 		{
 			return null;
+		}
+
+		else if(re.indexOf('^') > 0)
+		{
+			String str = "[";
+			for(int i=0; i<10; i++)
+				if(Integer.parseInt(re.substring(2,3)) != i)
+					str += Integer.toString(i);
+			str += "]";
+			return makeENfa(str);
 		}
 
 		else if(re.length() == 3)	// case of [a]
@@ -90,10 +100,10 @@ public class ENfa
 		return enfa;
 	}
 
-	public static ENfa or(ENfa one, ENfa other) throws Exception		// |
+	public static ENfa or(ENfa one, ENfa other)		// |
 	{
 		StateTable stateTable = StateTable.spanTable(one.getStateTable(), other.getStateTable());
-
+		
 		State state1 = new State().startState().setStateTable(stateTable);
 		State state2 = new State().finalState().setStateTable(stateTable);
 

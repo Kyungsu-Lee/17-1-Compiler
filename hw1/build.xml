@@ -26,7 +26,9 @@
     </target>
 
 <target name="run" depends="jar">
-	<java jar="./bin/jar/compiler.jar" fork="true"/>
+	<java jar="./bin/jar/compiler.jar" fork="true">
+		<arg line="${args}"/>
+	</java>
 </target>
 
 <target name="clean">

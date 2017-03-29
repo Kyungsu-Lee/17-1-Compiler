@@ -17,6 +17,7 @@ public class Parser
 
 		EClosure e = EClosure.geteClosure(enfa.getStateTable(), enfa.getStartState());
 		State startState = new State().startState().setStateTable(stateTable);
+		if(e.isFinalState()) startState.makeThisFinalState();
 		pairs.add(e, startState);
 
 		for(char token : characters)
@@ -27,7 +28,7 @@ public class Parser
 			{
 				if(pairs.containsKey(tmp))
 				{
-					stateTable.addState(pairs.get(tmp), token, pairs.get(tmp));
+					stateTable.addState(pairs.get(e), token, pairs.get(tmp));
 				}
 				else
 				{
@@ -35,7 +36,7 @@ public class Parser
 					if(tmp.isFinalState())
 						state.makeThisFinalState();
 					pairs.add(tmp, state);
-					stateTable.addState(pairs.get(tmp), token, state);
+					stateTable.addState(startState, token, state);
 
 					for(char tokens : characters)
 						addState(enfa.getStateTable(), tmp, tokens);
@@ -59,7 +60,7 @@ public class Parser
 		{
 			if(pairs.containsKey(tmp))
 			{
-				stateTable.addState(pairs.get(tmp), token, pairs.get(tmp));
+				stateTable.addState(pairs.get(eClosure), token, pairs.get(tmp));
 			}
 			else
 			{
