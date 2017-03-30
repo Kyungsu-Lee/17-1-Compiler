@@ -10,6 +10,6 @@
   * [jar]   : make jar file   
   * run   : run this program
   
-   <strong>ant run</strong>
-   
-  >asd
+   ><strong>ant run</strong>
+   >
+   >asd
