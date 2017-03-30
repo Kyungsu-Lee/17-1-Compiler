@@ -51,3 +51,13 @@
 <strong>how to run in program</strong>
 ><br>
 >In a program, you can enter the string and the program checks wheather the string is matched to regular expression which you put with args. If the string is matched to pattern, the program says "accpeted", and "rejected" when not.
+><br>
+><br>
+> example : <br>
+><code>ant run</code><br>
+><code>Enter Enter regular Expression arguments:</code><br>
+><code>[123]</code>
+><code>123</code>
+><code>rejected</code>
+><code>1</code>
+><code>accepted</code>
