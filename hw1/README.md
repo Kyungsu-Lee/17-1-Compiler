@@ -25,7 +25,7 @@
 <strong>how to run</strong>
    
 > In "jar" directory, there is compiler.jar
->   >java -jar compiler.jar 'regex'<br>
->   > you must write '' for os to recognize regex 
+>  <li>java -jar compiler.jar 'regex'</li><br>
+>  you must write '' for os to recognize regex 
 >
 >
