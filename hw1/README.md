@@ -41,6 +41,6 @@
 >This argument is "args" of Main Program, and you can put regular expression in here.
 ><br>
 ><br>
-> example : <code>ant run<br>
->Enter Enter regular Expression arguments:<br>
->[123]</code>
+> example : <code>ant run</code><br>
+><code>Enter Enter regular Expression arguments:</code><br>
+><code>[123]</code>
