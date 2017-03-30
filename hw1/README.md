@@ -11,5 +11,4 @@
    jar   : make jar file
    run   : run this program
   
-  
-    <i>ant run</i>
+   
