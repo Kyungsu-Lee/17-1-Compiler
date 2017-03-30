@@ -2,12 +2,12 @@
 
   <i>you must install ant and use it.</i>
   
-  component of ant : init/ clean/ build/ [jar]/ run
+  component of ant
   
   * init  : set up
   * clean : clean all build files
   * build : compile all java files
-  * jar   : make jar file
+  * jar   : make jar file   //default
   * run   : run this program
   
    <strong>ant run</strong>
