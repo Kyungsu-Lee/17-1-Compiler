@@ -12,9 +12,9 @@
   
    <strong>ant run</strong>
    >
-   > You can run this program with "ant run".<br>
-   > Running this, you can see the comment, "Enter Enter regular Expression arguments:".<br>
-   > This argument is "args" of Main Program, and you can put regular expression in here.<br>
-   > After that, the program will run.<br>
+   > You can run this program with "ant run".
+   > Running this, you can see the comment, "Enter Enter regular Expression arguments:".
+   > This argument is "args" of Main Program, and you can put regular expression in here.
+   > After that, the program will run.
    
    
