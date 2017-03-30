@@ -22,7 +22,7 @@
 <h1>Run Program</h1>
 
 
-<strong>how to run</strong>
+<strong>how to start</strong>
    
 > In "jar" directory, there is compiler.jar. you can run the program with,
 >  <code>java -jar compiler.jar 'regex'</code>
@@ -46,5 +46,8 @@
 ><br>
 ><br>
 ><br>
+><br>
+
+<strong>how to run in program</strong>
 ><br>
 >In a program, you can enter the string and the program checks wheather the string is matched to regular expression which you put with args. If the string is matched to pattern, the program says "accpeted", and "rejected" when not.
