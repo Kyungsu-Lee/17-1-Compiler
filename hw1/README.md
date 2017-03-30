@@ -56,8 +56,8 @@
 > example : <br>
 ><code>ant run</code><br>
 ><code>Enter Enter regular Expression arguments:</code><br>
-><code>[123]</code>
-><code>123</code>
-><code>rejected</code>
-><code>1</code>
-><code>accepted</code>
+><code>[123]</code><br>
+><code>123</code><br>
+><code>rejected</code><br>
+><code>1</code><br>
+><code>accepted</code><br>
