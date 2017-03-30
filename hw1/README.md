@@ -54,8 +54,7 @@
 ><br>
 ><br>
 > example : <br>
-><pre><code>
->ant run
+><pre><code>ant run
 >Enter Enter regular Expression arguments:
 >[123]
 >1
