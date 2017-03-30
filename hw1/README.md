@@ -2,7 +2,7 @@
 
   <i>you must install ant and use it.</i>
   
-  component of ant
+  <strong>component of ant</strong>
   
   * init  : set up
   * clean : clean all build files
@@ -17,4 +17,9 @@
    > This argument is "args" of Main Program, and you can put regular expression in here.
    > After that, the program will run.
    
+   
+<h1>Run Program</h1>
+
+
+<strong>how to run</strong>
    
