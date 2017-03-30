@@ -2,6 +2,7 @@ package hw1.parser;
 
 import hw1.automata.*;
 import hw1.automata.table.*;
+import hw1.regex.*;
 
 public class Parser
 {
@@ -9,6 +10,32 @@ public class Parser
 
 	private static Pairs pairs;
 	private static StateTable stateTable;
+
+	public static ENfa RE2ENFA(String re)
+	{
+		if(!Checker.check(re))	//	check re
+			return null;
+	
+		if(Checker.isConCat(re))
+		{
+			return ENfa.concat(RE2ENFA(Checker.substringConCat(re)[0]), RE2ENFA(Checker.substringConCat(re)[1]));
+		}
+
+		else if(Checker.isOr(re))
+		{
+			return ENfa.or(RE2ENFA(Checker.substringOr(re)[0]), RE2ENFA(Checker.substringOr(re)[1]));
+		}
+
+		else if(Checker.isAsterisk(re))
+		{
+			return ENfa.asterisk(RE2ENFA(Checker.substringAsterisk(re)));
+		}
+
+		else
+		{
+			return ENfa.makeENfa(re);
+		}
+	}
 
 	public static DFA ENFA2DFA(ENfa enfa)
 	{

@@ -58,8 +58,8 @@ public class UnitTable
 	public String toString()
 	{
 		String str = "";
-		str += this.fromState.getIndex() + " : ";
-		str += this.token + " : ";
+		str += this.fromState.getIndex() + " => (";
+		str += this.token + ") => ";
 		str += this.toState.getIndex();
 
 		return str;

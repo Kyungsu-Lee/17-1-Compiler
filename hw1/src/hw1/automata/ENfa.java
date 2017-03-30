@@ -56,12 +56,6 @@ public class ENfa
 			State state2 = new State().setStateTable(stateTable);
 			State finalState = new State().finalState().setStateTable(stateTable);
 
-			System.out.println(startState.getIndex());
-			System.out.println(state1.getIndex());
-			System.out.println(state2.getIndex());
-			System.out.println(finalState.getIndex());
-			System.out.println("====================");
-
 			stateTable.addState(startState, 'e', state1);
 			stateTable.addState(state1, token, state2);
 			stateTable.addState(state2, 'e', finalState);

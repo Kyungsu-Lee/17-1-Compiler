@@ -5,11 +5,11 @@
 <property name="src" value="src"/>
 <property name="bin" value="bin"/>
 <property name="lib" value="lib"/>
+<property name="jar" value="jar"/>
 
 <target name="init">
 	<delete dir="${bin}"/>
 	<mkdir dir="${bin}"/>
-	
 </target>
 
 <target name="build" depends="init">
@@ -17,22 +17,27 @@
 </target>
 
  <target name="jar" depends="build">
-        <mkdir dir="./bin/jar"/>
-        <jar destfile="./bin/jar/compiler.jar" basedir="bin/">
+        <mkdir dir="./jar"/>
+        <jar destfile="./jar/compiler.jar" basedir="bin/">
             <manifest>
-                <attribute name="main-class" value="test"/>
+                <attribute name="main-class" value="Main"/>
             </manifest>
         </jar>
     </target>
 
-<target name="run" depends="jar">
-	<java jar="./bin/jar/compiler.jar" fork="true">
+<target name="input" unless="args" description="prompts for command line arguments if necessary">
+  <input addProperty="args" message="Enter regular Expression arguments:"/>
+</target>
+
+<target name="run" depends="jar, input">
+	<java jar="./jar/compiler.jar" fork="true">
 		<arg line="${args}"/>
 	</java>
 </target>
 
 <target name="clean">
 	<delete dir="${bin}"/>
+	<delete dir="${jar}"/>
 </target>
 
 </project>

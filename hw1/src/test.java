@@ -10,32 +10,15 @@ public class test
 	{
 		try
 		{
-			ENfa enfa = ENfa.makeENfa("[3]");
-			enfa = ENfa.asterisk(enfa);
-			ENfa enfa2 = ENfa.makeENfa("[2]");
-			enfa2 = ENfa.asterisk(enfa2);
-			ENfa enfa3 = ENfa.makeENfa("[2]");
-			ENfa enfa4 = ENfa.makeENfa("[145]");
-			enfa = ENfa.concat(enfa, enfa2);
-			enfa = ENfa.concat(enfa, enfa3);
-			enfa = ENfa.asterisk(enfa);
-			enfa = ENfa.or(enfa, enfa4);
-
-			System.out.println(enfa.getStateTable());
-
-
-			for(State state : enfa.getAllStates())
-			{
-				if(state.isStartState())
-					System.out.println("start : " + state.getIndex());
-
-				if(state.isFinalState())
-					System.out.println("final : " + state.getIndex());
-			}
-
+	//		System.out.println(Checker.check("(((([123]|[56]).[789]))*.([^1].[123]))"));
+	//		System.out.println(Checker.check("((((([1].[12])|[4]).[56]))*|([123].([67]|[68])))"));
+	//		System.out.println(Checker.check("([123].[23])"));
+	//		System.out.println(Checker.check("(([123])*|[67])"));
+			
+			ENfa ee = Parser.RE2ENFA("((([123])*|[78]).[^1])");
+			System.out.println(ee.getStateTable());
 			System.out.println("==========");
-
-			DFA dfa = Parser.ENFA2DFA(enfa);
+			DFA dfa = Parser.ENFA2DFA(ee);
 			System.out.println(dfa.getStartState().getIndex());
 			System.out.print("final : ");
 			for(State s : dfa.getFinalState())
@@ -51,15 +34,10 @@ public class test
 			System.out.println("");
 			System.out.println(dfa.getStateTable());
 			System.out.println("==========");
-
-			System.out.println(dfa.isAccept("32222322"));
-			System.out.println("==========");
-			System.out.println("==========");
-
-	//		System.out.println(Checker.check("(((([123]|[56]).[789]))*.([^1].[123]))"));
-			System.out.println(Checker.check("((((([1].[12])|[4]).[56]))*|([123].([67]|[68])))"));
-			System.out.println(Checker.check("([123].[23])"));
-			System.out.println(Checker.check("(([123])*|[67])"));
+			System.out.println(dfa.isAccept("11111111"));
+			System.out.println(dfa.isAccept("1111172"));
+			System.out.println(dfa.isAccept("1111177"));
+			System.out.println(dfa.isAccept("111117"));
 
 		}catch(Exception e)
 		{

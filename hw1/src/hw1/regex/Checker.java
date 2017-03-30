@@ -4,7 +4,6 @@ public class Checker
 {
 	public static boolean check(String str)
 	{
-		System.out.println("str :: " + str);
 
 		if(!( paraCheck('(', ')', str) && paraCheck('[', ']', str))) return false;
 
@@ -82,9 +81,12 @@ public class Checker
 		return false;
 	}
 
+	public static String substringAsterisk(String str)
+	{
+		return	(str.substring(1, str.length()-2));	//remove ()*
+	}
 	public static boolean isConCat(String str)
 	{
-		System.out.println("concat : " + str);
 		boolean flag = true;
 
 		flag &= paraCheck('(', ')', str);
@@ -96,13 +98,22 @@ public class Checker
 		if(!flag) return false;
 
 
-		System.out.println(tmp.substring(0, indexOfConCat) + " :::::" + str.substring(indexOfConCat+2, str.length()-1));
 		return check(tmp.substring(0,indexOfConCat)) && check(str.substring(indexOfConCat+2, str.length()-1));	//check A.B
+	}
+	
+	public static String[] substringConCat(String str)
+	{
+		String tmp = str.substring(1, str.length()-1);
+
+		int indexOfConCat = matchedIndexOf(tmp, '.');
+
+		String[] s = new String[]{tmp.substring(0,indexOfConCat), str.substring(indexOfConCat+2, str.length()-1)};
+
+		return s;
 	}
 
 	public static boolean isOr(String str)
 	{
-		System.out.println("ir : " + str);
 		boolean flag = true;
 
 		flag &= paraCheck('(', ')', str);
@@ -112,8 +123,18 @@ public class Checker
 		flag &= (indexOfConCat >= 0 && tmp.charAt(indexOfConCat) == '|');
 
 		if(!flag) return false;
-		System.out.println(tmp.substring(0, indexOfConCat) + " :::::" + str.substring(indexOfConCat+2, str.length()-1));
 		return check(tmp.substring(0,indexOfConCat)) && check(str.substring(indexOfConCat+2, str.length()-1));	//check A.B
+	}
+
+	public static String[] substringOr(String str)
+	{
+		String tmp = str.substring(1, str.length()-1);
+
+		int indexOfConCat = matchedIndexOf(tmp, '|');
+
+		String[] s = new String[]{tmp.substring(0,indexOfConCat), str.substring(indexOfConCat+2, str.length()-1)};
+
+		return s;
 	}
 
 	private static int matchedIndexOf(String str, char token)
@@ -129,6 +150,11 @@ public class Checker
 		else
 		{
 			idx = indexOf(str, '[', ']');
+			if(idx < 0)
+				return -1;
+
+			if(!paraCheck('(',')', str.substring(0, idx)))
+				return -1;
 
 			if(str.charAt(idx+1) == token)
 				return idx+1;

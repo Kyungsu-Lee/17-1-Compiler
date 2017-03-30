@@ -68,7 +68,7 @@ public class DFA
 		{
 			return getStartState().isFinalState();
 		}
-	
+
 		iter = getStartState();
 
 		try
@@ -91,4 +91,21 @@ public class DFA
 	{
 		iter = iter.toNextState(token);
 	}
+
+	@Override
+		public String toString()
+		{
+			String str = "";
+			str += "startState : " + getStartState().getIndex() + "\n";
+			str += ("final : \n");
+			for(State s : getFinalState())
+				str += (s.getIndex() + "\n");
+			str += ("\n");
+			str += ("all states : \n");
+			for(State s : getAllStates())
+				str += (s.getIndex() + " \n");
+			str += "\n"+ (getStateTable());
+
+			return str;
+		}
 }
