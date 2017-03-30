@@ -57,6 +57,9 @@ public class test
 			System.out.println("==========");
 
 	//		System.out.println(Checker.check("(((([123]|[56]).[789]))*.([^1].[123]))"));
+			System.out.println(Checker.check("((((([1].[12])|[4]).[56]))*|([123].([67]|[68])))"));
+			System.out.println(Checker.check("([123].[23])"));
+			System.out.println(Checker.check("(([123])*|[67])"));
 
 		}catch(Exception e)
 		{

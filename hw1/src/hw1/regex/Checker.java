@@ -95,6 +95,7 @@ public class Checker
 
 		if(!flag) return false;
 
+
 		System.out.println(tmp.substring(0, indexOfConCat) + " :::::" + str.substring(indexOfConCat+2, str.length()-1));
 		return check(tmp.substring(0,indexOfConCat)) && check(str.substring(indexOfConCat+2, str.length()-1));	//check A.B
 	}
@@ -119,10 +120,10 @@ public class Checker
 	{
 		int idx = indexOf(str, '(', ')');
 
-		if(str.charAt(idx+1) == token)
+		if(idx+1 < str.length() && str.charAt(idx+1) == token)
 			return idx+1;
 
-		else if((str.charAt(idx+1) == '*') && idx+2 < str.length() && str.charAt(idx+2) == token)
+		else if(idx+1 < str.length() && (str.charAt(idx+1) == '*') && idx+2 < str.length() && str.charAt(idx+2) == token)
 			return idx + 2;
 
 		else
