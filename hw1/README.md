@@ -26,7 +26,21 @@
    
 > In "jar" directory, there is compiler.jar. you can run the program with,
 >  <code>java -jar compiler.jar 'regex'</code>
->  . you must write '' for os to recognize regex 
+>  . you must write '' in Linux, for os to recognize regex 
 ><br>
 ><br>
 > example : <code>java -jar compiler.jar '[123]'</code>
+><br>
+><br>
+><br>
+><br>
+><br>
+><br>
+>With ant, you can run the program. <code>ant run</code>Running this, you can see the comment, 
+>"Enter Enter regular Expression arguments:".
+>This argument is "args" of Main Program, and you can put regular expression in here.
+><br>
+><br>
+> example : <code>ant run<br>
+>Enter Enter regular Expression arguments:<br>
+>[123]</code>
