@@ -7,7 +7,7 @@
   * init  : set up
   * clean : clean all build files
   * build : compile all java files
-  * jar   : make jar file   //default
+  * [jar]   : make jar file   
   * run   : run this program
   
    <strong>ant run</strong>
