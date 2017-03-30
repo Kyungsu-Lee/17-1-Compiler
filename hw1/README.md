@@ -26,6 +26,7 @@
    
 > In "jar" directory, there is compiler.jar. you can run the program with,
 >  <code>java -jar compiler.jar 'regex'</code>
->  you must write '' for os to recognize regex 
->
->
+>  . you must write '' for os to recognize regex 
+><br>
+><br>
+> example : <code>java -jar compiler.jar '[123]'</code>
