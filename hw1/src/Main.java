@@ -19,7 +19,6 @@ class Main
 			rex += s;
 
 		rex = rex.trim();
-		System.out.println(rex);
 
 		if(!Checker.check(args[0]))
 		{

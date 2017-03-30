@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="euc-kr"?>
 
-<project default="run" basedir=".">
+<project default="jar" basedir=".">
 
 <property name="src" value="src"/>
 <property name="bin" value="bin"/>
