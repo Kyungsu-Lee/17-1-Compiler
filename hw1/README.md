@@ -12,4 +12,9 @@
   
    <strong>ant run</strong>
    >
-   >asd
+   > You can run this program with "ant run".
+   > Running this, you can see the comment, "Enter Enter regular Expression arguments:".
+   > This argument is "args" of Main Program, and you can put regular expression in here.
+   > After that, the program will run.
+   
+   
