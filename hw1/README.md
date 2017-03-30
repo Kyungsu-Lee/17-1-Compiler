@@ -2,7 +2,7 @@
 
   <i>you must install ant and use it.</i>
   
-  component of ant : init clean build [jar] run
+  component of ant : init/ clean/ build/ [jar]/ run
   
   * init  : set up
   * clean : clean all build files
