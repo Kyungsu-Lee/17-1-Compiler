@@ -57,10 +57,10 @@
 ><pre><code>ant run
 >Enter Enter regular Expression arguments:
 >[123]
->1
+>1         //by user
 >accepted
->123
+>123       //by user
 >rejected
->2
+>2         //by user
 >accepted
 ></code></pre>
