@@ -24,8 +24,8 @@
 
 <strong>how to run</strong>
    
-> In "jar" directory, there is compiler.jar
->  <code>java -jar compiler.jar 'regex'</code><br>
+> In "jar" directory, there is compiler.jar. you can run the program with,
+>  <code>java -jar compiler.jar 'regex'</code>
 >  you must write '' for os to recognize regex 
 >
 >
