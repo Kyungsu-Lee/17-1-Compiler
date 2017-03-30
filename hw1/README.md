@@ -1,15 +1,15 @@
 <h1>Build Script</h1>
 
-  *you must install ant and use it.
+  <i>you must install ant and use it.</i>
   
   component of ant : init clean build jar run
   default of ant : jar
   
-  - init  : set up
-  - clean : clean all build files
-  - build : compile all java files
-  - jar   : make jar file
-  - run   : run this program
+   init  : set up
+   clean : clean all build files
+   build : compile all java files
+   jar   : make jar file
+   run   : run this program
   
   
-    *ant run
+    <i>ant run</i>
