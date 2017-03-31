@@ -10,6 +10,9 @@ public class Checker
 		if(str.equals("e"))
 			return true;
 
+		if(str.length() < 3)
+			return false;
+
 		else if(str.charAt(0) == '(')
 		{
 			return isAsterisk(str) | isConCat(str) | isOr(str);
@@ -20,7 +23,7 @@ public class Checker
 			if(!paraCheck('[',']', str)) return false;
 
 			if(str.indexOf('^') >=0)
-				return str.length() == 4 && (str.charAt(2) >= '0' || str.charAt(2) <= '9');
+				return str.length() == 4 && (str.charAt(2) >= '0' && str.charAt(2) <= '9');
 
 			else
 			{
@@ -69,6 +72,9 @@ public class Checker
 
 	public static boolean isAsterisk(String str)
 	{
+		if(!hasValidOperator(str))
+			return false;
+
 		if( 	str.length() >= 3 &&
 				str.charAt(0) == '(' &&
 				str.charAt(str.length()-1) == '*' &&
@@ -87,6 +93,9 @@ public class Checker
 	}
 	public static boolean isConCat(String str)
 	{
+		if(!hasValidOperator(str))
+			return false;
+
 		boolean flag = true;
 
 		flag &= paraCheck('(', ')', str);
@@ -114,6 +123,9 @@ public class Checker
 
 	public static boolean isOr(String str)
 	{
+		if(!hasValidOperator(str))
+			return false;
+
 		boolean flag = true;
 
 		flag &= paraCheck('(', ')', str);
@@ -135,6 +147,13 @@ public class Checker
 		String[] s = new String[]{tmp.substring(0,indexOfConCat), str.substring(indexOfConCat+2, str.length()-1)};
 
 		return s;
+	}
+
+	private static boolean hasValidOperator(String str)
+	{
+		return str.indexOf('.') >= 0 |
+			str.indexOf('*') >= 0 |
+			str.indexOf('|') >= 0;
 	}
 
 	private static int matchedIndexOf(String str, char token)
