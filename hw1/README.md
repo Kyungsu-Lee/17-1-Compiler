@@ -26,7 +26,8 @@
    
 > In "jar" directory, there is compiler.jar. you can run the program with,
 >  <code>java -jar compiler.jar 'regex'</code>
->  . you must write '' in Linux, for os to recognize regex 
+>  . you must write '' in Linux, for os to recognize regex
+> and in Windows, you must enter ^^ if you want to enter the character, '^'.
 ><br>
 ><br>
 > example : <code>java -jar compiler.jar '[123]'</code>
