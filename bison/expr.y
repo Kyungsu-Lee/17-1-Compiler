@@ -21,6 +21,7 @@ term	: term '*' factor	{$$ = $1 * $3;}
 	| factor
 	;
 factor	: expr			{$$ = $1;}
+	| '(' expr ')'		{$$ = $2;}
 	| DIGIT
 	;
 %%
