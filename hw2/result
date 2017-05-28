@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<b>class </b>A<br>
+{<br>
+	<b>publicss </b></b> <b>static </b><b>void </b>main(String[] args)<br>
+	{<br>
+	<b>	int
+id </b>b>/b></b> </b> n = 10;<br>
+<br>
+		System.out.println("hello");<br>
+	}<br>
+}<br>

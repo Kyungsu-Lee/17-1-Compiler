@@ -6,10 +6,12 @@
 <property name="bin" value="bin"/>
 <property name="lib" value="lib"/>
 <property name="jar" value="jar"/>
+<property name="test" value="test"/>
 
 <target name="init">
 	<delete dir="${bin}"/>
 	<mkdir dir="${bin}"/>
+	<delete dir="./test-classes"/>
 </target>
 
 <target name="build" depends="init">
@@ -35,9 +37,34 @@
 	</java>
 </target>
 
+<target name="test" depends="build">
+	<mkdir dir="./test-classes"/>
+  	
+	<javac srcdir="test" destdir="test-classes">
+		<classpath>
+               		<fileset dir="${lib}">
+                  		<include name="**/*.jar" />
+               		</fileset>
+         	</classpath>	
+  	</javac>
+
+ <junit printsummary="yes" haltonfailure="no">
+
+	<!-- Project classpath, must include junit.jar -->
+
+	<!-- test class -->
+	<classpath location="${test}" />
+
+	<test name="test" haltonfailure="no" todir="${report.dir}"/>
+
+  </junit>
+
+</target>
+
 <target name="clean">
 	<delete dir="${bin}"/>
 	<delete dir="${jar}"/>
+	<delete dir="./test-classes"/>
 </target>
 
 </project>
