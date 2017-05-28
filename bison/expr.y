@@ -9,6 +9,8 @@
 %%
 line	: expr '\n'		{printf("%d\n", $1); yylval = $1;}
 	| line expr '\n' 	{printf("%d\n", $2); yylval = $2;}
+	| line '\n'	
+	| '\n'			
 	;
 expr	: expr '+' term		{$$ = $1 + $3;}
 	| expr '-' term		{$$ = $1 - $3;}

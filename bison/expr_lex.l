@@ -20,7 +20,9 @@
 	return DIGIT;
 }
 
-.	{
+[+]|[-]|[*]	{
 	return yytext[0];
 }
 
+.	{
+}
